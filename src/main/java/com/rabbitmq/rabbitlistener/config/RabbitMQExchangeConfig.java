@@ -22,4 +22,31 @@ public class RabbitMQExchangeConfig {
 				.build();
 	}
 	
+	@Bean
+	public Exchange getTopicExchangeUsingBuilder() {
+		return ExchangeBuilder.topicExchange("TopicExchangeUsingBuilder")
+				.autoDelete()
+				.durable(true)
+				.internal()
+				.build();
+	}
+	
+	@Bean
+	public Exchange getFanoutExchangeUsingBuilder() {
+		return ExchangeBuilder.fanoutExchange("FanoutExchangeUsingBuilder")
+				.autoDelete()
+				.durable(false)
+				.internal()
+				.build();
+	}
+	
+	@Bean
+	public Exchange getHeadersExchangeUsingBuilder() {
+		return ExchangeBuilder.headersExchange("HeadersExchangeUsingBuilder")
+				.autoDelete()
+				.durable(true)
+				.ignoreDeclarationExceptions()
+				.build();
+	}
+	
 }
