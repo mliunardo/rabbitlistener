@@ -14,7 +14,7 @@ public class RabbitMQQueueConfig {
 	}
 	
 	@Bean
-	public Queue getQueueBuilder() {
+	public Queue getQueueUsingBuilder() {
 		return QueueBuilder.durable("ExampleQueueBuilder")
 				.autoDelete()
 				.exclusive()
